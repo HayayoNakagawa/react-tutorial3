@@ -12,11 +12,11 @@ export default function App() {
   const [selectedImage, setSelectedImage] = useState(img[0]);
   const [isDarkened, setIsDarkened] = useState(false);
 
-  const handleThumbnailClick = (image) => {
+  const handClick = (image) => {
     setSelectedImage(image);
   };
 
-  const toggleDarken = () => {
+  const Darken = () => {
     setIsDarkened((prev) => !prev);
   };
 
@@ -25,7 +25,7 @@ export default function App() {
       <h1>Image Gallery Example</h1>
       <div className="full-img">
         <img
-          className="displayed-img"
+          className="display-img"
           src={selectedImage.src}
           alt={selectedImage.alt}
         />
@@ -35,7 +35,7 @@ export default function App() {
             backgroundColor: isDarkened ? "rgba(0, 0, 0, 0.5)" : "transparent",
           }}
         ></div>
-        <button className="dark" onClick={toggleDarken}>
+        <button className="dark" onClick={Darken}>
           {isDarkened ? "Lighten" : "Darken"}
         </button>
       </div>
@@ -46,7 +46,7 @@ export default function App() {
             src={image.src}
             alt={image.alt}
             className="thumb-img"
-            onClick={() => handleThumbnailClick(image)}
+            onClick={() => handClick(image)}
           />
         ))}
       </div>
